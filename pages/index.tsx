@@ -35,7 +35,6 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              date="2022-01-20"
               title="Variables and Data Types"
               colorTheme={ColorTheme.Green}
             />
@@ -50,7 +49,6 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              date="2022-01-25"
               title="Operators, Booleans, and Conditionals"
               colorTheme={ColorTheme.Green}
             />
@@ -65,7 +63,6 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              date="2022-01-27"
               title="Lists and Loops"
               colorTheme={ColorTheme.Blue}
             />
@@ -80,7 +77,6 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              date="2022-02-01"
               title="Loops, Collections, Quiz Prep"
               colorTheme={ColorTheme.Purple}
             />
@@ -95,7 +91,6 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              date="2022-02-03"
               title="Strings and String Methods"
               colorTheme={ColorTheme.Green}
             />
@@ -110,7 +105,6 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              date="2022-02-08"
               title="Functions Part 1"
               colorTheme={ColorTheme.Blue}
             />
@@ -140,7 +134,6 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              date="2022-02-10"
               title="Introduction to Jupyter and Pandas"
               colorTheme={ColorTheme.Orange}
             />
@@ -155,7 +148,6 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              date="2022-02-15"
               title="Series, DataFrame, CSV"
               colorTheme={ColorTheme.Orange}
             />
@@ -170,7 +162,6 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              date="2022-02-17"
               title="Pandas Filtering and Sorting"
               colorTheme={ColorTheme.Orange}
             />
@@ -185,7 +176,6 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              date="2022-02-22"
               title="Pandas Column Operations and Missing Values"
               colorTheme={ColorTheme.Orange}
             />
@@ -200,7 +190,6 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              date="2022-02-24"
               title="Missing Values, Datetime, Aggregation, and Merging"
               colorTheme={ColorTheme.Orange}
             />
@@ -215,7 +204,6 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              date="2022-03-01"
               title="More Aggregations, Intro to Merges"
               colorTheme={ColorTheme.Orange}
             />
@@ -230,7 +218,6 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              date="2022-03-03"
               title="Cell Operations, Advanced Exercises"
               colorTheme={ColorTheme.Orange}
             />
@@ -245,7 +232,6 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              date="2022-03-08"
               title="Hypothesis Testing"
               colorTheme={ColorTheme.Orange}
             />
@@ -275,7 +261,6 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              date="2022-03-22"
               title="Introduction to SQL"
               colorTheme={ColorTheme.Green}
             />
@@ -290,7 +275,6 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              date="2022-03-24"
               title="More SQL Queries and Aggregations"
               colorTheme={ColorTheme.Green}
             />
@@ -305,7 +289,6 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              date="2022-03-29"
               title="Basic SQL Joins"
               colorTheme={ColorTheme.Green}
             />
@@ -335,7 +318,6 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              date="2022-04-05"
               title="Introduction to DataViz"
               colorTheme={ColorTheme.Blue}
             />
@@ -350,7 +332,6 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              date="2022-04-07"
               title="Line, Scatter, and Bar Plots"
               colorTheme={ColorTheme.Blue}
             />
@@ -365,7 +346,6 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              date="2022-04-12"
               title="Advanced Visualizations"
               colorTheme={ColorTheme.Blue}
             />
@@ -380,7 +360,6 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              date="2022-04-19"
               title="Introduction to Tableau"
               colorTheme={ColorTheme.Blue}
             />
@@ -395,7 +374,6 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              date="2022-04-21"
               title="Advanced Tableau Visualizations"
               colorTheme={ColorTheme.Blue}
             />
