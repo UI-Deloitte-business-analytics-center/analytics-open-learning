@@ -1,0 +1,7 @@
+@import "styles/_mixins";
+
+.centeredColumn {
+  margin-top: 6rem;
+
+  @include text-block();
+}

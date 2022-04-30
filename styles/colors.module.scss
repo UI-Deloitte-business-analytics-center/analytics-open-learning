@@ -1,0 +1,22 @@
+@import "styles/variables";
+
+// A scss module file to share color variables
+// with Javascript
+:export {
+  green: $color-green;
+  purple: $color-purple;
+  yellow: $color-yellow;
+  pink: $color-pink;
+  blue: $color-blue;
+  darkerBlue: $color-darker-blue;
+  navy: $color-navy;
+  red: $color-red;
+  orange: $color-orange;
+  lightGray: $color-gray-40;
+  lighterGray: $color-gray-20;
+  borderGray: $color-border-gray;
+  gray: $color-gray-50;
+  darkGray: $color-dark-gray;
+  black: $color-black;
+  white: $color-white;
+}

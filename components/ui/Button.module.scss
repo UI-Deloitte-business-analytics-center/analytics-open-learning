@@ -1,0 +1,107 @@
+@use "sass:color";
+@import "styles/variables";
+@import "styles/mixins";
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  letter-spacing: 0;
+  color: $color-gray-100;
+  background-color: $color-gray-30;
+  border-radius: 0.4rem;
+  padding: 1rem 1.4rem;
+
+  &.fullWidth {
+    display: flex;
+    width: 100%;
+  }
+
+  @include media-breakpoint-down(xl) {
+    font-size: 0.95rem;
+  }
+
+  .reactIcon {
+    font-size: 0.9em;
+    margin-right: 0.5rem;
+  }
+
+  &:hover {
+    color: $color-black;
+    background-color: color.adjust($color-border-gray, $lightness: -3%);
+  }
+
+  &.disabled,
+  &:hover.disabled {
+    cursor: not-allowed;
+    background-color: $color-border-gray;
+    border-color: $color-border-gray;
+    color: #aaa;
+    transform: none;
+  }
+
+  &.green:not(.disabled) {
+    color: $color-white;
+    background-color: $color-green;
+
+    &:hover {
+      background-color: color.adjust($color-green, $lightness: 5%);
+    }
+  }
+
+  &.purple:not(.disabled) {
+    color: $color-white;
+    background-color: $color-purple;
+
+    &:hover {
+      background-color: color.adjust($color-purple, $lightness: 5%);
+    }
+  }
+
+  &.yellow:not(.disabled) {
+    background-color: $color-yellow;
+  }
+
+  &.pink:not(.disabled) {
+    color: $color-white;
+    background-color: $color-pink;
+
+    &:hover {
+      background-color: color.adjust($color-pink, $lightness: 5%);
+    }
+  }
+
+  &.blue:not(.disabled) {
+    color: $color-white;
+    background-color: $color-blue;
+
+    &:hover {
+      background-color: color.adjust($color-blue, $lightness: 5%);
+    }
+  }
+
+  &.orange:not(.disabled) {
+    color: $color-white;
+    background-color: $color-orange;
+
+    &:hover {
+      background-color: color.adjust($color-orange, $lightness: 5%);
+    }
+  }
+
+  &.gray:not(.disabled) {
+    background-color: $color-gray-40;
+  }
+
+  &.black:not(.disabled) {
+    color: white;
+    background-color: black;
+
+    &:hover {
+      background-color: color.adjust($color-black, $lightness: 15%);
+    }
+  }
+}
