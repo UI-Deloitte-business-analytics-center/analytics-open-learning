@@ -12,114 +12,6 @@ export interface paths {
       };
     };
   };
-  "/code_snippets": {
-    get: {
-      parameters: {
-        query: {
-          id?: parameters["rowFilter.code_snippets.id"];
-          title?: parameters["rowFilter.code_snippets.title"];
-          user_id?: parameters["rowFilter.code_snippets.user_id"];
-          user_code?: parameters["rowFilter.code_snippets.user_code"];
-          language?: parameters["rowFilter.code_snippets.language"];
-          created_at?: parameters["rowFilter.code_snippets.created_at"];
-          updated_at?: parameters["rowFilter.code_snippets.updated_at"];
-          last_accessed_at?: parameters["rowFilter.code_snippets.last_accessed_at"];
-          /** Filtering Columns */
-          select?: parameters["select"];
-          /** Ordering */
-          order?: parameters["order"];
-          /** Limiting and Pagination */
-          offset?: parameters["offset"];
-          /** Limiting and Pagination */
-          limit?: parameters["limit"];
-        };
-        header: {
-          /** Limiting and Pagination */
-          Range?: parameters["range"];
-          /** Limiting and Pagination */
-          "Range-Unit"?: parameters["rangeUnit"];
-          /** Preference */
-          Prefer?: parameters["preferCount"];
-        };
-      };
-      responses: {
-        /** OK */
-        200: {
-          schema: definitions["code_snippets"][];
-        };
-        /** Partial Content */
-        206: unknown;
-      };
-    };
-    post: {
-      parameters: {
-        body: {
-          /** code_snippets */
-          code_snippets?: definitions["code_snippets"];
-        };
-        query: {
-          /** Filtering Columns */
-          select?: parameters["select"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** Created */
-        201: unknown;
-      };
-    };
-    delete: {
-      parameters: {
-        query: {
-          id?: parameters["rowFilter.code_snippets.id"];
-          title?: parameters["rowFilter.code_snippets.title"];
-          user_id?: parameters["rowFilter.code_snippets.user_id"];
-          user_code?: parameters["rowFilter.code_snippets.user_code"];
-          language?: parameters["rowFilter.code_snippets.language"];
-          created_at?: parameters["rowFilter.code_snippets.created_at"];
-          updated_at?: parameters["rowFilter.code_snippets.updated_at"];
-          last_accessed_at?: parameters["rowFilter.code_snippets.last_accessed_at"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** No Content */
-        204: never;
-      };
-    };
-    patch: {
-      parameters: {
-        query: {
-          id?: parameters["rowFilter.code_snippets.id"];
-          title?: parameters["rowFilter.code_snippets.title"];
-          user_id?: parameters["rowFilter.code_snippets.user_id"];
-          user_code?: parameters["rowFilter.code_snippets.user_code"];
-          language?: parameters["rowFilter.code_snippets.language"];
-          created_at?: parameters["rowFilter.code_snippets.created_at"];
-          updated_at?: parameters["rowFilter.code_snippets.updated_at"];
-          last_accessed_at?: parameters["rowFilter.code_snippets.last_accessed_at"];
-        };
-        body: {
-          /** code_snippets */
-          code_snippets?: definitions["code_snippets"];
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferReturn"];
-        };
-      };
-      responses: {
-        /** No Content */
-        204: never;
-      };
-    };
-  };
   "/coding_challenge_attempts": {
     get: {
       parameters: {
@@ -955,65 +847,9 @@ export interface paths {
       };
     };
   };
-  "/rpc/generate_uid": {
-    post: {
-      parameters: {
-        body: {
-          args: {
-            /** Format: integer */
-            size: number;
-          };
-        };
-        header: {
-          /** Preference */
-          Prefer?: parameters["preferParams"];
-        };
-      };
-      responses: {
-        /** OK */
-        200: unknown;
-      };
-    };
-  };
 }
 
 export interface definitions {
-  /** @description Code snippets */
-  code_snippets: {
-    /**
-     * Format: bigint
-     * @description Note:
-     * This is a Primary Key.<pk/>
-     */
-    id: number;
-    /** Format: text */
-    title?: string;
-    /**
-     * Format: uuid
-     * @description Note:
-     * This is a Foreign Key to `profiles.id`.<fk table='profiles' column='id'/>
-     */
-    user_id?: string;
-    /** Format: text */
-    user_code?: string;
-    /** Format: text */
-    language?: string;
-    /**
-     * Format: timestamp with time zone
-     * @default now()
-     */
-    created_at?: string;
-    /**
-     * Format: timestamp with time zone
-     * @default now()
-     */
-    updated_at?: string;
-    /**
-     * Format: timestamp with time zone
-     * @default now()
-     */
-    last_accessed_at?: string;
-  };
   coding_challenge_attempts: {
     /**
      * Format: bigint
@@ -1278,24 +1114,6 @@ export interface parameters {
   offset: string;
   /** @description Limiting and Pagination */
   limit: string;
-  /** @description code_snippets */
-  "body.code_snippets": definitions["code_snippets"];
-  /** Format: bigint */
-  "rowFilter.code_snippets.id": string;
-  /** Format: text */
-  "rowFilter.code_snippets.title": string;
-  /** Format: uuid */
-  "rowFilter.code_snippets.user_id": string;
-  /** Format: text */
-  "rowFilter.code_snippets.user_code": string;
-  /** Format: text */
-  "rowFilter.code_snippets.language": string;
-  /** Format: timestamp with time zone */
-  "rowFilter.code_snippets.created_at": string;
-  /** Format: timestamp with time zone */
-  "rowFilter.code_snippets.updated_at": string;
-  /** Format: timestamp with time zone */
-  "rowFilter.code_snippets.last_accessed_at": string;
   /** @description coding_challenge_attempts */
   "body.coding_challenge_attempts": definitions["coding_challenge_attempts"];
   /** Format: bigint */
