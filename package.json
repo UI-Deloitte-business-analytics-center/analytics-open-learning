@@ -4,11 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node lib/pyodide/scrape-available-packages.mjs",
     "build": "next build",
     "start": "next start",
     "test:e2e": "playwright test",
-    "update-types": "npx openapi-typescript https://hrnkyfflkojpububxuxh.supabase.co/rest/v1/?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYyODE3MzE2NywiZXhwIjoxOTQzNzQ5MTY3fQ.LiS_21tbgjTv04Cb0GX6dhcyZDGVFxz1Nt44Xzn3jb4 --output types/database/index.ts"
+    "update-types": "npx openapi-typescript https://moxhkvurwmedyrjqycxv.supabase.co/rest/v1/?apikey=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1veGhrdnVyd21lZHlyanF5Y3h2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NTEwNjc0NTcsImV4cCI6MTk2NjY0MzQ1N30.Pyzrd6oEpmJIdtOanIhB5ZyiPIzx4f7Eu3f1ecLbvtc --output types/database/index.ts"
   },
   "dependencies": {
     "@dnd-kit/core": "^4.0.1",
