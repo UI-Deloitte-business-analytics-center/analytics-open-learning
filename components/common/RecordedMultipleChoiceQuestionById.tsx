@@ -5,6 +5,7 @@ import { Row, Col } from "react-bootstrap";
 import { BsCheckCircle, BsXCircle } from "react-icons/bs";
 import { RiEditBoxLine } from "react-icons/ri";
 import Tippy from "@tippyjs/react";
+import isEqual from "lodash/isEqual";
 import clsx from "clsx";
 import styles from "./RecordedChallenge.module.scss";
 import useMultipleChoiceQuestion from "hooks/useMultipleChoiceQuestion";
@@ -32,7 +33,15 @@ export default function RecordedMultipleChoiceQuestionById({
   const editLinkRef = useRef<HTMLAnchorElement>();
   const [showResult, setShowResult] = useState(false);
 
-  const onSubmit = async (userSelections: number[]) => {
+  const handleSubmit = async (userSelections: number[]) => {
+    if (session) {
+      submitForMembers(userSelections);
+    } else {
+      submitForGuests(userSelections);
+    }
+  };
+
+  const submitForMembers = async (userSelections: number[]) => {
     if (!session) {
       return;
     }
@@ -65,6 +74,24 @@ export default function RecordedMultipleChoiceQuestionById({
     setShowResult(true);
   };
 
+  const submitForGuests = async (userSelections: number[]) => {
+    const correctOptionIds = questionData.options
+      .filter((o) => o.is_correct)
+      .map((o) => o.id)
+      .sort();
+
+    const isCorrect = isEqual(correctOptionIds, userSelections);
+
+    if (isCorrect) {
+      toast.success("Great work! 👊");
+    } else {
+      toast.error("Try again! 🧐");
+    }
+
+    setAnswersData(questionData.options);
+    setShowResult(true);
+  };
+
   const getAttemptMessage = () => {
     if (!user) {
       return "You must be signed in to view your submission history";
@@ -81,7 +108,7 @@ export default function RecordedMultipleChoiceQuestionById({
     }
   };
 
-  const onReset = () => {
+  const handleReset = () => {
     setAnswersData([]);
     setShowResult(false);
   };
@@ -166,8 +193,8 @@ export default function RecordedMultipleChoiceQuestionById({
             questionData={questionData}
             answersData={answersData}
             showResult={showResult}
-            onSubmit={onSubmit}
-            onReset={onReset}
+            onSubmit={handleSubmit}
+            onReset={handleReset}
           />
         </div>
       </Col>
