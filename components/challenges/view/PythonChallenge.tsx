@@ -41,7 +41,6 @@ export default function PythonChallenge({
   showSolution = true,
   onSubmit,
 }: IPythonExerciseProps) {
-  const { user } = useSupabaseAuth();
   const [userCode, setUserCode] = useState(challengeData.starter_code);
   const [showSolutionModal, setShowSolutionModal] = useState(false);
   const [showFormattedModal, setShowFormattedModal] = useState(false);
@@ -240,14 +239,8 @@ export default function PythonChallenge({
                     onClick={async () => {
                       await autoformatCode();
                     }}
-                    tooltip={
-                      user ? (
-                        <>Autoformat your code using a formatter</>
-                      ) : (
-                        <>You must be signed in to use the autoformat feature</>
-                      )
-                    }
-                    disabled={!user || !isRuntimeReady}
+                    tooltip={<>Autoformat your code using a formatter</>}
+                    disabled={!isRuntimeReady}
                     label="Format"
                     IconComponent={MdFormatShapes}
                   />
@@ -311,7 +304,7 @@ export default function PythonChallenge({
       <SolutionCodeModal
         isOpen={showSolutionModal}
         onClose={() => setShowSolutionModal(false)}
-        cid={challengeData.id}
+        solutionCode={challengeData.solution_code}
         language="python"
       />
 

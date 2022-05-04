@@ -12,7 +12,6 @@ import useMultipleChoiceQuestion from "hooks/useMultipleChoiceQuestion";
 import useMultipleChoiceAttempts from "hooks/useMultipleChoiceAttempts";
 import MultipleChoiceQuestion from "components/challenges/view/MultipleChoiceQuestion";
 import { QueryStatusEnum } from "types";
-import { definitions } from "types/database";
 import { toast } from "react-toastify";
 
 interface IRecordedMultipleChoiceQuestionByIdProps {
@@ -27,13 +26,12 @@ export default function RecordedMultipleChoiceQuestionById({
   const { user, session, isAdmin } = useSupabaseAuth();
   const { status, questionData, error } = useMultipleChoiceQuestion(questionId);
   const { attempts } = useMultipleChoiceAttempts(questionId);
-  const [answersData, setAnswersData] = useState<
-    definitions["multiple_choice_options"][]
-  >([]);
   const editLinkRef = useRef<HTMLAnchorElement>();
   const [showResult, setShowResult] = useState(false);
 
   const handleSubmit = async (userSelections: number[]) => {
+    console.log(`RecordedMultipleChoiceQuestionById submit()`);
+
     if (session) {
       submitForMembers(userSelections);
     } else {
@@ -70,7 +68,6 @@ export default function RecordedMultipleChoiceQuestionById({
       toast.error("Try again! 🧐");
     }
 
-    setAnswersData(submitResult.answersData);
     setShowResult(true);
   };
 
@@ -88,7 +85,6 @@ export default function RecordedMultipleChoiceQuestionById({
       toast.error("Try again! 🧐");
     }
 
-    setAnswersData(questionData.options);
     setShowResult(true);
   };
 
@@ -109,7 +105,6 @@ export default function RecordedMultipleChoiceQuestionById({
   };
 
   const handleReset = () => {
-    setAnswersData([]);
     setShowResult(false);
   };
 
@@ -191,7 +186,6 @@ export default function RecordedMultipleChoiceQuestionById({
           <MultipleChoiceQuestion
             status={status}
             questionData={questionData}
-            answersData={answersData}
             showResult={showResult}
             onSubmit={handleSubmit}
             onReset={handleReset}

@@ -165,7 +165,6 @@ export default function RecordedMultipleChoiceQuestion({
           {questionData && (
             <MultipleChoiceQuestion
               questionData={questionData}
-              answersData={answersData}
               showResult={showResult}
               onSubmit={onSubmit}
               onReset={onReset}
