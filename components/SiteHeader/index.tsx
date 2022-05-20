@@ -29,18 +29,38 @@ export default function SiteHeader() {
       )}
 
       <header className={styles.header}>
-        <Container>
-          <Row className="align-items-center">
-            <Col>
-              <Link href="/">
-                <a>
-                  The University of Illinois-Deloitte Foundation Center for
-                  Business Analytics
-                </a>
-              </Link>
-            </Col>
-          </Row>
-        </Container>
+        <div className={styles.fixedBar}>
+          <Container fluid>
+            <Row>
+              <Col>
+                <div className={styles.barBody}>
+                  <Row className="align-items-center">
+                    <Col>
+                      <Link href="/">
+                        <a className={styles.siteTitle}>
+                          Analytics Open Learning
+                        </a>
+                      </Link>
+                    </Col>
+
+                    <Col>
+                      <div className="d-flex justify-content-end">
+                        <ul className={styles.headerMenu}>
+                          <li>
+                            <Link href="/about">About</Link>
+                          </li>
+                          <li>
+                            <Link href="/about">Extra Resources</Link>
+                          </li>
+                        </ul>
+                      </div>
+                    </Col>
+                  </Row>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </div>
       </header>
     </>
   );

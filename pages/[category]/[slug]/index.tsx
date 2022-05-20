@@ -86,7 +86,7 @@ export default function PageWithChallenges({
     <ChallengesContextProvider challenges={challenges}>
       <Layout>
         <div className={styles.page}>
-          <Container>
+          <Container fluid>
             {frontMatterData.title && (
               <Row>
                 <Col>
@@ -146,7 +146,7 @@ export default function PageWithChallenges({
         </div>
       </Layout>
 
-      <ChallengesProgressDisplay />
+      {/* <ChallengesProgressDisplay /> */}
     </ChallengesContextProvider>
   );
 }

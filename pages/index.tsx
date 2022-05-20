@@ -9,7 +9,7 @@ export default function NotesPage() {
   return (
     <Layout>
       <main className={styles.page}>
-        <Container>
+        <Container fluid>
           <Row>
             <Col>
               <h1 className="pageTitle">Learning Resources</h1>
@@ -19,12 +19,26 @@ export default function NotesPage() {
           <Row>
             <Col>
               <h2 className="sectionTitle">
-                Python Basics <span className="purple accent" />
+                Python Foundation <span className="purple accent" />
               </h2>
             </Col>
           </Row>
 
           <Row>
+            <NoteItem
+              href="/lecture-notes/intro-to-analytics"
+              thumbnail={
+                <Image
+                  src="/images/notes/abstract-001.png"
+                  width={900}
+                  height={450}
+                  alt=""
+                />
+              }
+              title="Introduction to Analytics"
+              colorTheme={ColorTheme.Green}
+            />
+
             <NoteItem
               href="/notes/variables-and-data-types"
               thumbnail={
