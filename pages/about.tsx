@@ -2,20 +2,20 @@ import Layout from "components/Layout";
 import { Container, Row, Col } from "react-bootstrap";
 import styles from "styles/pages/notes/common.module.scss";
 
-export default function TestPage() {
+export default function AboutPage() {
   return (
     <Layout>
       <main className={styles.page}>
-        <Container>
+        <Container fluid>
           <Row>
             <Col>
-              <h1 className="pageTitle">Test Page</h1>
+              <h1 className="pageTitle">About</h1>
             </Col>
           </Row>
 
           <Row>
             <Col>
-              <p>Test Content</p>
+              <p>Analytics Open Learning provides a </p>
             </Col>
           </Row>
         </Container>

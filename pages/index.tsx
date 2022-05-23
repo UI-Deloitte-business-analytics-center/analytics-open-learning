@@ -19,7 +19,7 @@ export default function NotesPage() {
           <Row>
             <Col>
               <h2 className="sectionTitle">
-                Python Foundation <span className="purple accent" />
+                Python Foundation <span className="accent orange" />
               </h2>
             </Col>
           </Row>
@@ -36,11 +36,10 @@ export default function NotesPage() {
                 />
               }
               title="Introduction to Analytics"
-              colorTheme={ColorTheme.Green}
             />
 
             <NoteItem
-              href="/notes/variables-and-data-types"
+              href="/lecture-notes/intro-to-python"
               thumbnail={
                 <Image
                   src="/images/notes/abstract-001.png"
@@ -49,8 +48,20 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              title="Variables and Data Types"
-              colorTheme={ColorTheme.Green}
+              title="Introduction to Python"
+            />
+
+            <NoteItem
+              href="/lecture-notes/data-types-and-variables"
+              thumbnail={
+                <Image
+                  src="/images/notes/abstract-001.png"
+                  width={900}
+                  height={450}
+                  alt=""
+                />
+              }
+              title="Data Types and Variables"
             />
 
             <NoteItem
@@ -64,7 +75,6 @@ export default function NotesPage() {
                 />
               }
               title="Operators, Booleans, and Conditionals"
-              colorTheme={ColorTheme.Green}
             />
 
             <NoteItem
@@ -78,7 +88,6 @@ export default function NotesPage() {
                 />
               }
               title="Lists and Loops"
-              colorTheme={ColorTheme.Blue}
             />
 
             <NoteItem
@@ -92,7 +101,6 @@ export default function NotesPage() {
                 />
               }
               title="Loops, Collections, Quiz Prep"
-              colorTheme={ColorTheme.Purple}
             />
 
             <NoteItem
@@ -106,7 +114,6 @@ export default function NotesPage() {
                 />
               }
               title="Strings and String Methods"
-              colorTheme={ColorTheme.Green}
             />
 
             <NoteItem
@@ -120,7 +127,6 @@ export default function NotesPage() {
                 />
               }
               title="Functions Part 1"
-              colorTheme={ColorTheme.Blue}
             />
           </Row>
 
@@ -149,7 +155,6 @@ export default function NotesPage() {
                 />
               }
               title="Introduction to Jupyter and Pandas"
-              colorTheme={ColorTheme.Orange}
             />
 
             <NoteItem
@@ -163,7 +168,6 @@ export default function NotesPage() {
                 />
               }
               title="Series, DataFrame, CSV"
-              colorTheme={ColorTheme.Orange}
             />
 
             <NoteItem
@@ -177,7 +181,6 @@ export default function NotesPage() {
                 />
               }
               title="Pandas Filtering and Sorting"
-              colorTheme={ColorTheme.Orange}
             />
 
             <NoteItem
@@ -191,7 +194,6 @@ export default function NotesPage() {
                 />
               }
               title="Pandas Column Operations and Missing Values"
-              colorTheme={ColorTheme.Orange}
             />
 
             <NoteItem
@@ -205,7 +207,6 @@ export default function NotesPage() {
                 />
               }
               title="Missing Values, Datetime, Aggregation, and Merging"
-              colorTheme={ColorTheme.Orange}
             />
 
             <NoteItem
@@ -219,7 +220,6 @@ export default function NotesPage() {
                 />
               }
               title="More Aggregations, Intro to Merges"
-              colorTheme={ColorTheme.Orange}
             />
 
             <NoteItem
@@ -233,21 +233,6 @@ export default function NotesPage() {
                 />
               }
               title="Cell Operations, Advanced Exercises"
-              colorTheme={ColorTheme.Orange}
-            />
-
-            <NoteItem
-              href="https://nbviewer.org/github/bdi475/notebooks/blob/3699e186389ba9035794008559f2a25fec1b5638/L15-hypothesis-testing-vocareum-SOLUTION.ipynb"
-              thumbnail={
-                <Image
-                  src="/images/notes/pandas-gray-bg.png"
-                  width={900}
-                  height={450}
-                  alt=""
-                />
-              }
-              title="Hypothesis Testing"
-              colorTheme={ColorTheme.Orange}
             />
           </Row>
 
@@ -276,7 +261,6 @@ export default function NotesPage() {
                 />
               }
               title="Introduction to SQL"
-              colorTheme={ColorTheme.Green}
             />
 
             <NoteItem
@@ -290,7 +274,6 @@ export default function NotesPage() {
                 />
               }
               title="More SQL Queries and Aggregations"
-              colorTheme={ColorTheme.Green}
             />
 
             <NoteItem
@@ -304,7 +287,6 @@ export default function NotesPage() {
                 />
               }
               title="Basic SQL Joins"
-              colorTheme={ColorTheme.Green}
             />
           </Row>
 
@@ -333,7 +315,6 @@ export default function NotesPage() {
                 />
               }
               title="Introduction to DataViz"
-              colorTheme={ColorTheme.Blue}
             />
 
             <NoteItem
@@ -347,7 +328,6 @@ export default function NotesPage() {
                 />
               }
               title="Line, Scatter, and Bar Plots"
-              colorTheme={ColorTheme.Blue}
             />
 
             <NoteItem
@@ -361,35 +341,6 @@ export default function NotesPage() {
                 />
               }
               title="Advanced Visualizations"
-              colorTheme={ColorTheme.Blue}
-            />
-
-            <NoteItem
-              href="https://www.notion.so/bdi475/Lecture-22-Introduction-to-Tableau-15832a839f2146a59f36160bd7ce1450"
-              thumbnail={
-                <Image
-                  src="/images/notes/dataviz.png"
-                  width={900}
-                  height={450}
-                  alt=""
-                />
-              }
-              title="Introduction to Tableau"
-              colorTheme={ColorTheme.Blue}
-            />
-
-            <NoteItem
-              href="https://bdi475.notion.site/Lecture-24-Advanced-Tableau-Visualizations-334bf4b89ffe4012b6b0fcb334da0178"
-              thumbnail={
-                <Image
-                  src="/images/notes/dataviz.png"
-                  width={900}
-                  height={450}
-                  alt=""
-                />
-              }
-              title="Advanced Tableau Visualizations"
-              colorTheme={ColorTheme.Blue}
             />
           </Row>
         </Container>

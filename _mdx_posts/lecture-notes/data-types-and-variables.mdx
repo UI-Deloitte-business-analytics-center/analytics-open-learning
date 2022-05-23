@@ -1,0 +1,67 @@
+---
+title: Variables and Data Types
+listTitle: "Objectives ⟶"
+listItems:
+  - Learn expressions and evaluations
+  - Understand what a data type is
+  - Discuss basic data types
+  - Understand what a variable is
+  - Discuss why variables are useful
+thumbnailSrc: /images/notes/abstract-001.png
+thumbnailWidth: 2400
+thumbnailHeight: 1200
+---
+
+<CenteredColumn>
+
+## How Python Executes Your Code
+
+<Chip color="purple">Expressions</Chip>
+
+To understand how the Python interpreter executes your code, we first need to understand *expression*s in the context of programming.
+
+An expression is a syntatic entity that may be _evaluated_ to determine its value ([source](<https://en.wikipedia.org/wiki/Expression_(computer_science)>)). Here is a simple expression.
+
+$$
+1 + 2
+$$
+
+The mathematical expression above *evaluate*s to the value $3$.
+
+Expressions are not always as simple as having two operands and a single operator. Sometimes, you may have an expression that contains multiple *sub-expression*s. Look at this mathematical expression.
+
+$$
+(1 + 2) \times (4 \div 2)
+$$
+
+We are trained to perform the arithmetic operations in the predefined order of operations ([PEMDAS](https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-arithmetic-operations/cc-6th-order-of-operations/v/more-complicated-order-of-operations-example)). Here is a step-by-step breakdown of how a human would carry out this evaluation process.
+
+1. Evaluate $(1 + 2)$ to $3$,
+2. Evaluate $(4 \div 2)$ to $2$,
+3. Rewrite the equation to $3 \times 2$,
+4. Evaluate $3 \times 2$ to $6$
+
+Python executes your program in a similar fashion. It evaluates your expressions from left to right (except when you're performing an assignment operation, which we will discuss later). The operator precedence also emulates the mathematical order of operations, except that there are some operators that only exist in Python.
+
+For a summary of the operator precedence in Python, refer to the **Operator Precedence** section of https://docs.python.org/3/reference/expressions.html.
+
+</CenteredColumn>
+
+<CenteredColumn>
+
+## Python Data Types
+
+<Chip color="purple">What is it?</Chip>
+
+A data type denotes the category of a value. In Python, ALL values have *data type*s. We'll go over a few **built-in** types. Built-in types are pre-defined data types that are part of the Python programming language itself.
+
+- Text `"Hello World"` is a text type (`str` ).
+- Number `475` is an integer type (`int` ).
+- Number `1.99` is a float type (`float` ).
+- Logical `True` is a boolean type (`bool`).
+
+<Chip color="purple">Primitive vs Non-primitive</Chip>
+
+Data types can be categorized into two types - _primitive_ and _non-primitive_ types. Technically speaking, Python only has _non-primitive_ types as everything is an object in Python. For the purpose of this course, you do not have to worry about differentiating between primitive and non-primitive types.
+
+</CenteredColumn>

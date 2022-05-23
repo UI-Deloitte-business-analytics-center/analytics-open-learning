@@ -2,21 +2,14 @@ import Link from "next/link";
 import { Col } from "react-bootstrap";
 import styles from "./NoteItem.module.scss";
 import { ColorTheme } from "types/color-theme";
-import clsx from "clsx";
 
 interface NoteItemProps {
   href: string;
   thumbnail?: React.ReactNode;
   title: string;
-  colorTheme?: ColorTheme;
 }
 
-export default function NoteItem({
-  href,
-  thumbnail,
-  title,
-  colorTheme = ColorTheme.Green,
-}: NoteItemProps) {
+export default function NoteItem({ href, thumbnail, title }: NoteItemProps) {
   return (
     <Col lg={4} md={6}>
       <Link href={href}>

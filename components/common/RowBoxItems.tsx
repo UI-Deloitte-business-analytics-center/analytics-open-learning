@@ -21,8 +21,6 @@ export default function RowBoxItems({
   const childrenArray = Children.toArray(children);
   const mdLength = 12 / childrenArray.length;
 
-  console.log(childrenArray);
-
   return (
     <Row
       className={clsx(styles.boxItems, "composable-block", {

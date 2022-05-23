@@ -47,10 +47,10 @@ export default function SiteHeader() {
                       <div className="d-flex justify-content-end">
                         <ul className={styles.headerMenu}>
                           <li>
-                            <Link href="/about">About</Link>
+                            <Link href="/">Learn</Link>
                           </li>
                           <li>
-                            <Link href="/about">Extra Resources</Link>
+                            <Link href="/about">About</Link>
                           </li>
                         </ul>
                       </div>
