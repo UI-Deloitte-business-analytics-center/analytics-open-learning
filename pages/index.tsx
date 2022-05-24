@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import styles from "styles/pages/notes/NotesPage.module.scss";
 import Image from "next/image";
 import NoteItem from "components/pages/notes/NoteItem";
+import Link from "next/link";
 
 export default function NotesPage() {
   return (
@@ -144,7 +145,8 @@ export default function NotesPage() {
 
           <Row>
             <NoteItem
-              href="https://nbviewer.org/github/bdi475/notebooks/blob/4c66be3bb966b9a58564f58b6cabbf7d6c9a82e8/L08-introduction-to-jupyter-and-pandas-SOLUTION.ipynb"
+              solutionHref="https://nbviewer.org/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/01-introduction-to-jupyter-and-pandas-SOLUTION.ipynb"
+              href="https://colab.research.google.com/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/01-introduction-to-jupyter-and-pandas.ipynb"
               thumbnail={
                 <Image
                   src="/images/notes/pandas-gray-bg.png"
@@ -157,7 +159,8 @@ export default function NotesPage() {
             />
 
             <NoteItem
-              href="https://nbviewer.org/github/bdi475/notebooks/blob/4c66be3bb966b9a58564f58b6cabbf7d6c9a82e8/L09-pandas-series-dataframe-csv-filtering-SOLUTION.ipynb"
+              solutionHref="https://nbviewer.org/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/02-pandas-series-dataframe-csv-filtering-SOLUTION.ipynb"
+              href="https://colab.research.google.com/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/02-pandas-series-dataframe-csv-filtering.ipynb"
               thumbnail={
                 <Image
                   src="/images/notes/pandas-gray-bg.png"
@@ -170,7 +173,8 @@ export default function NotesPage() {
             />
 
             <NoteItem
-              href="https://nbviewer.org/github/bdi475/notebooks/blob/4c66be3bb966b9a58564f58b6cabbf7d6c9a82e8/L10-pandas-filtering-sorting-SOLUTION.ipynb"
+              solutionHref="https://nbviewer.org/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/03-pandas-filtering-sorting-SOLUTION.ipynb"
+              href="https://colab.research.google.com/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/03-pandas-filtering-sorting.ipynb"
               thumbnail={
                 <Image
                   src="/images/notes/pandas-gray-bg.png"
@@ -183,7 +187,8 @@ export default function NotesPage() {
             />
 
             <NoteItem
-              href="https://nbviewer.org/github/bdi475/notebooks/blob/2f71cdaf7cdaab48817b44dc8ed1e6e47fd326cc/L11-pandas-columns-missing-values-vocareum-SOLUTION.ipynb"
+              solutionHref="https://nbviewer.org/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/04-pandas-columns-missing-values-SOLUTION.ipynb"
+              href="https://colab.research.google.com/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/04-pandas-columns-missing-values.ipynb"
               thumbnail={
                 <Image
                   src="/images/notes/pandas-gray-bg.png"
@@ -196,7 +201,8 @@ export default function NotesPage() {
             />
 
             <NoteItem
-              href="https://nbviewer.org/github/bdi475/notebooks/blob/2f71cdaf7cdaab48817b44dc8ed1e6e47fd326cc/L12-missing-values-datetime-aggregation-joins-vocareum-SOLUTION.ipynb"
+              solutionHref="https://nbviewer.org/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/05-missing-values-datetime-SOLUTION.ipynb"
+              href="https://colab.research.google.com/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/05-missing-values-datetime.ipynb"
               thumbnail={
                 <Image
                   src="/images/notes/pandas-gray-bg.png"
@@ -209,7 +215,8 @@ export default function NotesPage() {
             />
 
             <NoteItem
-              href="https://nbviewer.org/github/bdi475/notebooks/blob/3c6b43e4566a94e85b6b9e5d6097a33a848b8fd8/L13-aggregations-and-intro-to-merges-vocareum-SOLUTION.ipynb"
+              solutionHref="https://nbviewer.org/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/06-aggregations-and-intro-to-merges-SOLUTION.ipynb"
+              href="https://colab.research.google.com/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/06-aggregations-and-intro-to-merges.ipynb"
               thumbnail={
                 <Image
                   src="/images/notes/pandas-gray-bg.png"
@@ -222,7 +229,8 @@ export default function NotesPage() {
             />
 
             <NoteItem
-              href="https://nbviewer.org/github/bdi475/notebooks/blob/3c6b43e4566a94e85b6b9e5d6097a33a848b8fd8/L14-more-pandas-vocareum-SOLUTION.ipynb"
+              solutionHref="https://nbviewer.org/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/07-more-pandas-SOLUTION.ipynb"
+              href="https://colab.research.google.com/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/07-more-pandas.ipynb"
               thumbnail={
                 <Image
                   src="/images/notes/pandas-gray-bg.png"
@@ -250,7 +258,8 @@ export default function NotesPage() {
 
           <Row>
             <NoteItem
-              href="https://nbviewer.org/github/bdi475/notebooks/blob/ce3b24aca031d595cb8c58ede3d43c973ad1f354/L17-intro-to-SQL-SOLUTION.ipynb"
+              solutionHref="https://nbviewer.org/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/11-intro-to-SQL-SOLUTION.ipynb"
+              href="https://colab.research.google.com/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/11-intro-to-SQL.ipynb"
               thumbnail={
                 <Image
                   src="/images/notes/sql-gray-bg.png"
@@ -263,7 +272,8 @@ export default function NotesPage() {
             />
 
             <NoteItem
-              href="https://nbviewer.org/github/bdi475/notebooks/blob/ce3b24aca031d595cb8c58ede3d43c973ad1f354/L18-SQL-queries-aggregations-SOLUTION.ipynb"
+              solutionHref="https://nbviewer.org/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/12-SQL-queries-aggregations-SOLUTION.ipynb"
+              href="https://colab.research.google.com/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/12-SQL-queries-aggregations.ipynb"
               thumbnail={
                 <Image
                   src="/images/notes/sql-gray-bg.png"
@@ -291,7 +301,8 @@ export default function NotesPage() {
 
           <Row>
             <NoteItem
-              href="https://nbviewer.org/github/bdi475/notebooks/blob/5a7526421f6725df6b66ab7f128a9f836d4c7c65/L20-intro-to-visualizations-vocareum-SOLUTION.ipynb"
+              solutionHref="https://nbviewer.org/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/20-intro-to-visualizations-SOLUTION.ipynb"
+              href="https://colab.research.google.com/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/20-intro-to-visualizations.ipynb"
               thumbnail={
                 <Image
                   src="/images/notes/dataviz.png"
@@ -304,7 +315,8 @@ export default function NotesPage() {
             />
 
             <NoteItem
-              href="https://nbviewer.org/github/bdi475/notebooks/blob/5a7526421f6725df6b66ab7f128a9f836d4c7c65/L21-line-bar-scatter-plots-vocareum-SOLUTION.ipynb"
+              solutionHref="https://nbviewer.org/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/21-line-bar-scatter-plots-SOLUTION.ipynb"
+              href="https://colab.research.google.com/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/21-line-bar-scatter-plots.ipynb"
               thumbnail={
                 <Image
                   src="/images/notes/dataviz.png"
@@ -317,7 +329,8 @@ export default function NotesPage() {
             />
 
             <NoteItem
-              href="https://nbviewer.org/github/bdi475/notebooks/blob/68028638d96a81dc201e0b758c8700b021f2740e/L22-advanced-visualizations-vocareum-SOLUTION.ipynb"
+              solutionHref="https://nbviewer.org/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/22-advanced-visualizations-SOLUTION.ipynb"
+              href="https://colab.research.google.com/github/UI-Deloitte-business-analytics-center/notebooks/blob/main/analytics-open-learning/22-advanced-visualizations.ipynb"
               thumbnail={
                 <Image
                   src="/images/notes/dataviz.png"

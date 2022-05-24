@@ -18,17 +18,21 @@ export default function NoteItem({
 }: NoteItemProps) {
   return (
     <Col lg={4} md={6}>
-      <Link href={href}>
-        <a className={styles.noteItem}>
-          {thumbnail}
+      <div className={styles.noteWrapper}>
+        <Link href={href}>
+          <a className={styles.noteItem}>
+            {thumbnail}
 
-          <h3>{title}</h3>
+            <h3>{title}</h3>
+          </a>
+        </Link>
 
-          <div className={styles.dateWrapper}>
-            <div className={styles.date}>Date</div>
-          </div>
-        </a>
-      </Link>
+        {solutionHref && (
+          <Link href={solutionHref}>
+            <a className={styles.solutionLink}>View Solution</a>
+          </Link>
+        )}
+      </div>
     </Col>
   );
 }
