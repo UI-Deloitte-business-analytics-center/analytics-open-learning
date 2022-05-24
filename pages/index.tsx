@@ -3,7 +3,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import styles from "styles/pages/notes/NotesPage.module.scss";
 import Image from "next/image";
 import NoteItem from "components/pages/notes/NoteItem";
-import { ColorTheme } from "types/color-theme";
 
 export default function NotesPage() {
   return (
@@ -274,19 +273,6 @@ export default function NotesPage() {
                 />
               }
               title="More SQL Queries and Aggregations"
-            />
-
-            <NoteItem
-              href="https://nbviewer.org/github/bdi475/notebooks/blob/166da5e11aa44757987094d44692cd7ded635713/L19-SQL-joins-vocareum-SOLUTION.ipynb"
-              thumbnail={
-                <Image
-                  src="/images/notes/sql-gray-bg.png"
-                  width={900}
-                  height={450}
-                  alt=""
-                />
-              }
-              title="Basic SQL Joins"
             />
           </Row>
 

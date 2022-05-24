@@ -5,11 +5,17 @@ import { ColorTheme } from "types/color-theme";
 
 interface NoteItemProps {
   href: string;
+  solutionHref?: string;
   thumbnail?: React.ReactNode;
   title: string;
 }
 
-export default function NoteItem({ href, thumbnail, title }: NoteItemProps) {
+export default function NoteItem({
+  href,
+  solutionHref,
+  thumbnail,
+  title,
+}: NoteItemProps) {
   return (
     <Col lg={4} md={6}>
       <Link href={href}>
