@@ -99,7 +99,7 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              title="Loops and Collections"
+              title="Collections and Strings"
             />
 
             <NoteItem
