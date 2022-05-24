@@ -390,10 +390,6 @@ export default function BooleansAndConditionalsPage() {
             </Col>
           </Row>
 
-          <LargeQuote className={styles.block}>
-            <p>How does Biaggis sound?</p>
-          </LargeQuote>
-
           <RecordedPythonChallengeById
             challengeId={25}
             className={styles.block}
