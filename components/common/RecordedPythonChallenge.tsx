@@ -200,7 +200,7 @@ export default function RecordedPythonChallenge({
                     </>
                   )}
 
-                  {challengeResult && (
+                  {challengeResult && user && (
                     <Tippy
                       content={getAttemptMessage()}
                       className="tippy"

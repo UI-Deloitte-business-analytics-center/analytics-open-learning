@@ -5,13 +5,14 @@ import { Row, Col } from "react-bootstrap";
 import { BsCheckCircle, BsXCircle } from "react-icons/bs";
 import { RiEditBoxLine } from "react-icons/ri";
 import Tippy from "@tippyjs/react";
+import isEqual from "lodash/isEqual";
 import clsx from "clsx";
 import styles from "./RecordedChallenge.module.scss";
+import useMultipleChoiceQuestion from "hooks/useMultipleChoiceQuestion";
+import useMultipleChoiceAttempts from "hooks/useMultipleChoiceAttempts";
 import MultipleChoiceQuestion from "components/challenges/view/MultipleChoiceQuestion";
-import { definitions } from "types/database";
+import { QueryStatusEnum } from "types";
 import { toast } from "react-toastify";
-import useChallenges from "hooks/useChallenges";
-import { ChallengeTypeEnum } from "types/challenge";
 
 interface IRecordedMultipleChoiceQuestionProps {
   questionId: number;
@@ -23,20 +24,22 @@ export default function RecordedMultipleChoiceQuestion({
   className,
 }: IRecordedMultipleChoiceQuestionProps) {
   const { user, session, isAdmin } = useSupabaseAuth();
-  const { multipleChoiceQuestions, challengeResults } = useChallenges();
-  const questionData = multipleChoiceQuestions?.find((o) => o.id == questionId);
-  const challengeResult = challengeResults?.find(
-    (o) =>
-      o.challenge_type === ChallengeTypeEnum.MultipleChoice &&
-      o.challenge_id == questionId
-  );
-  const [answersData, setAnswersData] = useState<
-    definitions["multiple_choice_options"][]
-  >([]);
+  const { status, questionData, error } = useMultipleChoiceQuestion(questionId);
+  const { attempts } = useMultipleChoiceAttempts(questionId);
   const editLinkRef = useRef<HTMLAnchorElement>();
   const [showResult, setShowResult] = useState(false);
 
-  const onSubmit = async (userSelections: number[]) => {
+  const handleSubmit = async (userSelections: number[]) => {
+    console.log(`RecordedMultipleChoiceQuestionById submit()`);
+
+    if (session) {
+      submitForMembers(userSelections);
+    } else {
+      submitForGuests(userSelections);
+    }
+  };
+
+  const submitForMembers = async (userSelections: number[]) => {
     if (!session) {
       return;
     }
@@ -65,24 +68,43 @@ export default function RecordedMultipleChoiceQuestion({
       toast.error("Try again! 🧐");
     }
 
-    setAnswersData(submitResult.answersData);
+    setShowResult(true);
+  };
+
+  const submitForGuests = async (userSelections: number[]) => {
+    const correctOptionIds = questionData.options
+      .filter((o) => o.is_correct)
+      .map((o) => o.id)
+      .sort();
+
+    const isCorrect = isEqual(correctOptionIds, userSelections);
+
+    if (isCorrect) {
+      toast.success("Great work! 👊");
+    } else {
+      toast.error("Try again! 🧐");
+    }
+
     setShowResult(true);
   };
 
   const getAttemptMessage = () => {
     if (!user) {
       return "You must be signed in to view your submission history";
-    } else if (challengeResult.total_count === 0) {
+    } else if (attempts.length === 0) {
       return "No submission";
-    } else if (challengeResult.success_count === 0) {
-      return `No successful submission yet`;
     } else {
-      return `Pass`;
+      const passCount = attempts.filter((o) => o.is_success).length;
+
+      if (passCount === 0) {
+        return `No successful submission yet`;
+      } else {
+        return `Pass`;
+      }
     }
   };
 
-  const onReset = () => {
-    setAnswersData([]);
+  const handleReset = () => {
     setShowResult(false);
   };
 
@@ -101,7 +123,9 @@ export default function RecordedMultipleChoiceQuestion({
                   Multiple Choice Question
                 </span>
                 <h2 className={styles.exerciseTitle}>
-                  {questionData ? questionData.title : "Loading"}
+                  {status === QueryStatusEnum.SUCCESS
+                    ? questionData.title
+                    : "Loading"}
                 </h2>
 
                 <div className={styles.topControls}>
@@ -127,7 +151,7 @@ export default function RecordedMultipleChoiceQuestion({
                     </>
                   )}
 
-                  {challengeResult && (
+                  {user && (
                     <Tippy
                       content={getAttemptMessage()}
                       className="tippy"
@@ -140,16 +164,17 @@ export default function RecordedMultipleChoiceQuestion({
                           styles.iconButton,
                           styles.attemptsButton,
                           {
-                            [styles.hasSubmission]:
-                              challengeResult.total_count > 0,
+                            [styles.hasSubmission]: attempts.length > 0,
                             [styles.onlyFail]:
-                              challengeResult.success_count === 0 &&
-                              challengeResult.fail_count > 0,
-                            [styles.hasPass]: challengeResult.success_count > 0,
+                              attempts.length > 0 &&
+                              attempts.every((o) => !o.is_success),
+                            [styles.hasPass]: attempts.some(
+                              (o) => o.is_success
+                            ),
                           }
                         )}
                       >
-                        {challengeResult.success_count > 0 ? (
+                        {attempts.some((o) => o.is_success) ? (
                           <BsCheckCircle className={styles.reactIcon} />
                         ) : (
                           <BsXCircle className={styles.reactIcon} />
@@ -162,14 +187,13 @@ export default function RecordedMultipleChoiceQuestion({
             </Col>
           </Row>
 
-          {questionData && (
-            <MultipleChoiceQuestion
-              questionData={questionData}
-              showResult={showResult}
-              onSubmit={onSubmit}
-              onReset={onReset}
-            />
-          )}
+          <MultipleChoiceQuestion
+            status={status}
+            questionData={questionData}
+            showResult={showResult}
+            onSubmit={handleSubmit}
+            onReset={handleReset}
+          />
         </div>
       </Col>
     </Row>

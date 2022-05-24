@@ -4,9 +4,14 @@ import { Container, Row, Col } from "react-bootstrap";
 import styles from "./SiteHeader.module.scss";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { desktop } from "constants/media-query-strings";
+import { IoLogOutSharp } from "react-icons/io5";
+import useSupabaseAuth from "hooks/useSupabaseAuth";
+import { supabaseClient } from "lib/supabase/supabaseClient";
+import { HiLogout } from "react-icons/hi";
 
 export default function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user } = useSupabaseAuth();
   const isScreenDesktop = useMediaQuery(desktop);
 
   useEffect(() => {
@@ -38,7 +43,9 @@ export default function SiteHeader() {
                     <Col>
                       <Link href="/">
                         <a className={styles.siteTitle}>
-                          Analytics Open Learning
+                          <span className={styles.title}>
+                            Analytics Open Learning
+                          </span>
                         </a>
                       </Link>
                     </Col>
@@ -52,6 +59,16 @@ export default function SiteHeader() {
                           <li>
                             <Link href="/about">About</Link>
                           </li>
+                          {user && (
+                            <li>
+                              <a
+                                className={styles.signOutButton}
+                                onClick={() => supabaseClient.auth.signOut()}
+                              >
+                                <HiLogout className={styles.reactIcon} />
+                              </a>
+                            </li>
+                          )}
                         </ul>
                       </div>
                     </Col>
