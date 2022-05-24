@@ -73,8 +73,6 @@ export default function BooleansAndConditionalsPage() {
               <li>Membership Operators</li>
               <li>Identity Operators</li>
             </ul>
-
-            <h3>Arithmetic Operators</h3>
           </CenteredColumn>
 
           <RecordedMultipleChoiceQuestionById

@@ -5,6 +5,7 @@
   position: relative;
   font-size: 1.1rem;
   padding-top: 2.5rem;
+  z-index: 1;
 
   .fixedBar {
     position: fixed;
@@ -12,7 +13,7 @@
     left: 0;
     width: 100%;
     background-color: white;
-    z-index: 20;
+    z-index: 2;
 
     .barBody {
       border-bottom: 1px solid $color-gray-800;

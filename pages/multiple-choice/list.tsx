@@ -157,7 +157,7 @@ export default function PythonChallengeListPage({ page }) {
   return (
     <Layout>
       <main className="page">
-        <Container>
+        <Container fluid>
           <Row>
             <Col>
               <h1 className="pageTitle">Multiple Choice</h1>

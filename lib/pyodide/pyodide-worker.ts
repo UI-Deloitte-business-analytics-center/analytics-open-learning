@@ -38,9 +38,6 @@ export class PythonRuntime {
     self.pyodideGlobals = (
       await this.pyodide.runPythonAsync("list(globals().keys())")
     ).toJs();
-
-    console.log(`pyodideGlobals`);
-    console.log(self.pyodideGlobals);
   }
 
   async findImports(code: string): Promise<string[]> {

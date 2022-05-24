@@ -6,7 +6,6 @@ import { IoRefresh } from "react-icons/io5";
 import styles from "./MultipleChoiceQuestion.module.scss";
 import InstructionText from "./InstructionText";
 import MultipleChoiceOption from "./MultipleChoiceOption";
-import { QueryStatusEnum } from "types";
 import Button from "components/ui/Button";
 import { IconType } from "react-icons";
 import { ColorTheme } from "types/color-theme";
@@ -15,7 +14,6 @@ import Chip from "components/common/Chip";
 import { FiThumbsUp } from "react-icons/fi";
 
 interface IMultipleChoiceQuestionProps {
-  status?: QueryStatusEnum;
   questionData: IMultipleChoiceQuestionWithOptions;
   showResult?: boolean;
   onSubmit: (userSelectionIds: number[]) => Promise<void>;
@@ -23,7 +21,6 @@ interface IMultipleChoiceQuestionProps {
 }
 
 export default function MultipleChoiceQuestion({
-  status,
   questionData,
   showResult,
   onSubmit,

@@ -99,7 +99,7 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              title="Loops, Collections, Quiz Prep"
+              title="Loops and Collections"
             />
 
             <NoteItem
@@ -125,7 +125,7 @@ export default function NotesPage() {
                   alt=""
                 />
               }
-              title="Functions Part 1"
+              title="Functions"
             />
           </Row>
 

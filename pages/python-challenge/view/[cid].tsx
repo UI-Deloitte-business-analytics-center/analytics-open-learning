@@ -1,33 +1,46 @@
 import { useRouter } from "next/router";
-import RecordedPythonChallengeById from "components/common/RecordedPythonChallengeById";
+import RecordedPythonChallenge from "components/common/RecordedPythonChallenge";
 import Layout from "components/Layout";
 import { Container, Row, Col } from "react-bootstrap";
 import { getChallengeIdAsNumberFromQuery } from "utils/challenge";
+import { ChallengeTypeEnum } from "types/challenge";
+import { ChallengesContextProvider } from "context/ChallengesContext";
 
-export default function ViewCodingChallengePage() {
+export default function ViewPythonChallengePage() {
   const router = useRouter();
   const { cid } = router.query;
   let challengeId = getChallengeIdAsNumberFromQuery(cid);
 
+  console.log(`PyChallenge id: ${challengeId}`);
+
+  const challenges = [
+    {
+      challengeType: ChallengeTypeEnum.PythonChallenge,
+      challengeId,
+    },
+  ];
+
   return (
-    <Layout>
-      <main
-        style={{
-          paddingBottom: "10rem",
-        }}
-      >
-        <Container>
-          <Row>
-            <Col>
-              {cid ? (
-                <RecordedPythonChallengeById challengeId={challengeId} />
-              ) : (
-                <p>Loading...</p>
-              )}
-            </Col>
-          </Row>
-        </Container>
-      </main>
-    </Layout>
+    <ChallengesContextProvider challenges={challenges}>
+      <Layout>
+        <main
+          style={{
+            paddingBottom: "10rem",
+          }}
+        >
+          <Container fluid>
+            <Row>
+              <Col>
+                {cid ? (
+                  <RecordedPythonChallenge challengeId={challengeId} />
+                ) : (
+                  <p>Loading...</p>
+                )}
+              </Col>
+            </Row>
+          </Container>
+        </main>
+      </Layout>
+    </ChallengesContextProvider>
   );
 }

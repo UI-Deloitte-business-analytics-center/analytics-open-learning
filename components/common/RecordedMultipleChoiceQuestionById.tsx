@@ -184,7 +184,6 @@ export default function RecordedMultipleChoiceQuestionById({
           </Row>
 
           <MultipleChoiceQuestion
-            status={status}
             questionData={questionData}
             showResult={showResult}
             onSubmit={handleSubmit}
