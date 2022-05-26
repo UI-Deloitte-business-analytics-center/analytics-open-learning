@@ -1,6 +1,12 @@
 # Analytics Open Learning
 
-This is a course site for the University of Illinois-Deloitte Foundation Center for Business Analytics' open-learning resources.
+This is a learning site for the University of Illinois-Deloitte Foundation Center for Business Analytics' open-learning resources.
+
+## High-level Architecture
+
+![high-level-architecture](https://user-images.githubusercontent.com/1064036/170509771-d79c0d70-1746-43db-ac80-0f9f83d305a4.jpg)
+
+* Authentication with Wix has not been implemented yet.
 
 ## Preview (Development) and Production Branches
 
