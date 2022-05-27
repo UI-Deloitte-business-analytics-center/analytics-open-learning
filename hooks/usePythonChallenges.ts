@@ -30,7 +30,7 @@ export default function usePythonChallenges(challengeIds: number[]) {
       Object.assign({}, prevResult, {
         status: error ? QueryStatusEnum.ERROR : QueryStatusEnum.SUCCESS,
         data,
-        error: error ? error.message : null,
+        error: error?.message,
       })
     );
   };
