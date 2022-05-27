@@ -3,22 +3,27 @@ import RecordedPythonChallenge from "components/common/RecordedPythonChallenge";
 import Layout from "components/Layout";
 import { Container, Row, Col } from "react-bootstrap";
 import { getChallengeIdAsNumberFromQuery } from "utils/challenge";
-import { ChallengeTypeEnum } from "types/challenge";
+import { ChallengeTypeEnum, IChallengeTypeAndId } from "types/challenge";
 import { ChallengesContextProvider } from "context/ChallengesContext";
+import { useEffect, useState } from "react";
 
 export default function ViewPythonChallengePage() {
+  // aaa
   const router = useRouter();
   const { cid } = router.query;
   let challengeId = getChallengeIdAsNumberFromQuery(cid);
+  const [challenges, setChallenges] = useState<IChallengeTypeAndId[]>(null);
 
-  console.log(`PyChallenge id: ${challengeId}`);
+  useEffect(() => {
+    if (router.isReady) {
+      const challenge = {
+        challengeType: ChallengeTypeEnum.PythonChallenge,
+        challengeId,
+      };
 
-  const challenges = [
-    {
-      challengeType: ChallengeTypeEnum.PythonChallenge,
-      challengeId,
-    },
-  ];
+      setChallenges([challenge]);
+    }
+  }, [router.isReady]);
 
   return (
     <ChallengesContextProvider challenges={challenges}>

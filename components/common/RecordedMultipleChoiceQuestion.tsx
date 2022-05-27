@@ -36,8 +36,6 @@ export default function RecordedMultipleChoiceQuestion({
   const [showResult, setShowResult] = useState(false);
 
   const handleSubmit = async (userSelections: number[]) => {
-    console.log(`RecordedMultipleChoiceQuestion submit()`);
-
     if (session) {
       submitForMembers(userSelections);
     } else {

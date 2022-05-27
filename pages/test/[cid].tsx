@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import RecordedPythonChallenge from "components/common/RecordedPythonChallenge";
 import Layout from "components/Layout";
 import { Container, Row, Col } from "react-bootstrap";
 import { getChallengeIdAsNumberFromQuery } from "utils/challenge";
@@ -17,17 +16,6 @@ function ChallengeTestComponent({ challengeId }) {
       o.challenge_id == challengeId
   );
 
-  console.log("**********************************");
-  console.log(`ChallengeTestComponent, challengeId=${challengeId}`);
-  console.log(`pythonChallenges`);
-  console.log(pythonChallenges);
-
-  console.log(`challengeResults`);
-  console.log(challengeResults);
-
-  console.log(`challenge`);
-  console.log(challenge);
-
   return (
     <div>
       {challengeId ? JSON.stringify(pythonChallenges) : <p>Loading...</p>}
@@ -41,9 +29,6 @@ export default function ViewPythonChallengePage() {
   let challengeId = getChallengeIdAsNumberFromQuery(cid);
   const [challenges, setChallenges] = useState<IChallengeTypeAndId[]>(null);
 
-  console.log("=====================");
-  console.log(`PyChallenge id: ${challengeId}`);
-
   useEffect(() => {
     if (router.isReady) {
       setChallenges([
@@ -54,9 +39,6 @@ export default function ViewPythonChallengePage() {
       ]);
     }
   }, [router.isReady]);
-
-  console.log(`CHALLENGES`);
-  console.log(challenges);
 
   return (
     <ChallengesContextProvider challenges={challenges}>

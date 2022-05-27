@@ -13,18 +13,12 @@ export default function ViewMultipleChoiceQuestionPage() {
   let challengeId = getChallengeIdAsNumberFromQuery(qid);
   const [challenges, setChallenges] = useState<IChallengeTypeAndId[]>(null);
 
-  console.log(`qid=${qid}`);
-  console.log(`MCQ id: ${challengeId}`);
-
   useEffect(() => {
     if (router.isReady) {
       const challenge = {
         challengeType: ChallengeTypeEnum.MultipleChoice,
         challengeId,
       };
-
-      console.log(`[qid]=${qid}`);
-      console.log(challenge);
 
       setChallenges([challenge]);
     }
