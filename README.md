@@ -2,6 +2,8 @@
 
 This is a learning site for the University of Illinois-Deloitte Foundation Center for Business Analytics' open-learning resources.
 
+For questions or issues, please email Ye Joo Park at [ypark32@illinois.edu](mailto:ypark32@illinois.edu).
+
 ## High-level Architecture
 
 ![high-level-architecture](https://user-images.githubusercontent.com/1064036/170509771-d79c0d70-1746-43db-ac80-0f9f83d305a4.jpg)
